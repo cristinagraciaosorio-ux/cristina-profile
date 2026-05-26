@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cristina Gracia Osorio – Recruitment & HR Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #FAF8F4;
+    --warm-white: #FFFFFF;
+    --clay: #C4714A;
+    --clay-light: #F0D5C8;
+    --clay-dark: #8B4A2F;
+    --ink: #1C1A18;
+    --ink-mid: #4A4540;
+    --ink-light: #8A837C;
+    --border: #E8E2DA;
+    --section-bg: #F5F1EB;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(250, 248, 244, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 2rem;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-logo {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.1rem;
+    color: var(--clay);
+    letter-spacing: 0.01em;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--ink-mid);
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--clay); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 60px;
+  }
+
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5rem 4rem 5rem 6rem;
+  }
+
+  .hero-tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--clay);
+    background: var(--clay-light);
+    padding: 0.35rem 0.85rem;
+    border-radius: 100px;
+    margin-bottom: 2rem;
+  }
+
+  .hero-name {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2.8rem, 5vw, 4.2rem);
+    line-height: 1.1;
+    color: var(--ink);
+    margin-bottom: 1rem;
+  }
+
+  .hero-name em {
+    font-style: italic;
+    color: var(--clay);
+  }
+
+  .hero-sub {
+    font-size: 1.1rem;
+    color: var(--ink-mid);
+    font-weight: 300;
+    max-width: 420px;
+    margin-bottom: 2.5rem;
+    line-height: 1.8;
+  }
+
+  .hero-contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.9rem;
+    color: var(--ink-mid);
+  }
+
+  .contact-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--clay);
+    flex-shrink: 0;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: var(--clay);
+    color: white;
+    padding: 0.8rem 2rem;
+    border-radius: 100px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    letter-spacing: 0.02em;
+    transition: background 0.2s, transform 0.2s;
+  }
+
+  .btn-primary:hover { background: var(--clay-dark); transform: translateY(-1px); }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--ink);
+    padding: 0.8rem 2rem;
+    border-radius: 100px;
+    border: 1.5px solid var(--border);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+
+  .btn-secondary:hover { border-color: var(--clay); transform: translateY(-1px); }
+
+  .hero-right {
+    background: var(--section-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-right::before {
+    content: '';
+    position: absolute;
+    width: 400px; height: 400px;
+    border-radius: 50%;
+    background: var(--clay-light);
+    opacity: 0.4;
+    top: -100px; right: -100px;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 380px;
+  }
+
+  .stat-card {
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 1.5rem;
+  }
+
+  .stat-card.accent {
+    background: var(--clay);
+    border-color: var(--clay);
+  }
+
+  .stat-number {
+    font-family: 'DM Serif Display', serif;
+    font-size: 2.4rem;
+    line-height: 1;
+    color: var(--ink);
+    margin-bottom: 0.3rem;
+  }
+
+  .stat-card.accent .stat-number { color: white; }
+
+  .stat-label {
+    font-size: 0.8rem;
+    color: var(--ink-light);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .stat-card.accent .stat-label { color: rgba(255,255,255,0.75); }
+
+  .stat-card.wide {
+    grid-column: span 2;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .stat-card.wide .stat-number { font-size: 1.8rem; }
+
+  /* SECTIONS */
+  section { padding: 5rem 6rem; }
+
+  .section-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--clay);
+    margin-bottom: 0.75rem;
+  }
+
+  .section-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    line-height: 1.2;
+    color: var(--ink);
+    margin-bottom: 1rem;
+  }
+
+  .section-desc {
+    font-size: 1rem;
+    color: var(--ink-mid);
+    max-width: 600px;
+    line-height: 1.8;
+    margin-bottom: 3rem;
+  }
+
+  /* ABOUT */
+  #about {
+    background: var(--warm-white);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+  }
+
+  .skill-pill {
+    background: var(--section-bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0.6rem 0.9rem;
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--ink-mid);
+  }
+
+  /* EXPERIENCE */
+  #experience { background: var(--cream); }
+
+  .timeline {
+    position: relative;
+    padding-left: 2rem;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 8px; bottom: 8px;
+    width: 1px;
+    background: var(--border);
+  }
+
+  .timeline-item {
+    position: relative;
+    padding-bottom: 2.5rem;
+    padding-left: 1.5rem;
+  }
+
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -2rem;
+    top: 8px;
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: var(--clay);
+    border: 2px solid var(--cream);
+    box-shadow: 0 0 0 1px var(--clay);
+  }
+
+  .timeline-date {
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--clay);
+    margin-bottom: 0.3rem;
+  }
+
+  .timeline-role {
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--ink);
+    margin-bottom: 0.15rem;
+  }
+
+  .timeline-company {
+    font-size: 0.88rem;
+    color: var(--ink-light);
+    margin-bottom: 0.75rem;
+  }
+
+  .timeline-desc {
+    font-size: 0.9rem;
+    color: var(--ink-mid);
+    line-height: 1.7;
+  }
+
+  /* PORTFOLIO */
+  #portfolio { background: var(--section-bg); }
+
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .portfolio-card {
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+
+  .portfolio-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+  }
+
+  .card-top {
+    height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card-top.blog { background: linear-gradient(135deg, #F0D5C8 0%, #FAF8F4 100%); }
+  .card-top.design { background: linear-gradient(135deg, #D5E8E0 0%, #F4FAF8 100%); }
+  .card-top.tracking { background: linear-gradient(135deg, #D5D8F0 0%, #F4F5FA 100%); }
+  .card-top.linkedin { background: linear-gradient(135deg, #C8DCF0 0%, #F4F8FA 100%); }
+
+  .card-body { padding: 1.25rem 1.5rem 1.5rem; }
+
+  .card-type {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--clay);
+    margin-bottom: 0.4rem;
+  }
+
+  .card-title {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--ink);
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+  }
+
+  .card-desc {
+    font-size: 0.82rem;
+    color: var(--ink-light);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+
+  .card-link {
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--clay);
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+  }
+
+  /* CONTACT */
+  #contact {
+    background: var(--ink);
+    text-align: center;
+  }
+
+  #contact .section-label { color: var(--clay-light); }
+  #contact .section-title { color: white; }
+  #contact .section-desc { color: rgba(255,255,255,0.6); margin: 0 auto 2.5rem; }
+
+  .contact-grid {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+  }
+
+  .contact-chip {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 100px;
+    padding: 0.7rem 1.5rem;
+    font-size: 0.88rem;
+    color: rgba(255,255,255,0.85);
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+
+  .contact-chip:hover { background: rgba(255,255,255,0.14); }
+
+  .contact-chip strong { color: white; }
+
+  footer {
+    text-align: center;
+    padding: 1.5rem;
+    background: var(--ink);
+    border-top: 1px solid rgba(255,255,255,0.08);
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.3);
+  }
+
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero-left { padding: 4rem 2rem; }
+    .hero-right { padding: 3rem 2rem; min-height: 50vh; }
+    #about { grid-template-columns: 1fr; gap: 2rem; }
+    section { padding: 3rem 2rem; }
+    nav { padding: 0 1.5rem; }
+    .nav-links { gap: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">Cristina G. Osorio</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-left">
+    <span class="hero-tag">Open to Opportunities · AU & US Clients</span>
+    <h1 class="hero-name">Cristina<br><em>Gracia Osorio</em></h1>
+    <p class="hero-sub">Senior Recruitment Specialist & Virtual HR Professional with 8+ years building remote teams and streamlining people operations.</p>
+    <div class="hero-contacts">
+      <div class="contact-item"><span class="contact-dot"></span> Cebu City, Philippines</div>
+      <div class="contact-item"><span class="contact-dot"></span> cristinagraciaosorio@gmail.com</div>
+      <div class="contact-item"><span class="contact-dot"></span> +63 917 703 3557</div>
+    </div>
+    <div class="hero-cta">
+      <a href="#contact" class="btn-primary">Get in touch</a>
+      <a href="#portfolio" class="btn-secondary">View my work</a>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="stats-grid">
+      <div class="stat-card accent">
+        <div class="stat-number">8+</div>
+        <div class="stat-label">Years experience</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">100%</div>
+        <div class="stat-label">Remote roles</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">US &amp; AU</div>
+        <div class="stat-label">Clients supported</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">6+</div>
+        <div class="stat-label">Industries</div>
+      </div>
+      <div class="stat-card wide">
+        <div>
+          <div class="stat-number">Full-cycle</div>
+          <div class="stat-label">Sourcing → Onboarding</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div>
+    <div class="section-label">About me</div>
+    <h2 class="section-title">Recruiter. HR Partner.<br>People-first professional.</h2>
+    <p style="color: var(--ink-mid); line-height: 1.8; margin-bottom: 1.5rem;">I specialize in finding the right people for the right roles — not just qualified candidates, but dependable professionals who align with a team's culture and goals. My career spans end-to-end talent acquisition, virtual HR operations, compliance management, SOP development, and employee engagement across remote-first environments.</p>
+    <p style="color: var(--ink-mid); line-height: 1.8;">I've recruited for VA and support roles specifically, which gives me a sharp eye for what great remote talent looks like. I take full ownership of my work, thrive without micromanagement, and bring genuine care to every hire.</p>
+  </div>
+
+  <div>
+    <div class="section-label" style="margin-bottom: 1rem;">Core skills</div>
+    <div class="skills-grid">
+      <div class="skill-pill">End-to-end recruitment</div>
+      <div class="skill-pill">LinkedIn Recruiter</div>
+      <div class="skill-pill">Candidate screening</div>
+      <div class="skill-pill">Apollo sourcing</div>
+      <div class="skill-pill">Interview coordination</div>
+      <div class="skill-pill">SOP development</div>
+      <div class="skill-pill">HR compliance</div>
+      <div class="skill-pill">Onboarding & offboarding</div>
+      <div class="skill-pill">HubSpot · Notion</div>
+      <div class="skill-pill">Google Suite · Slack</div>
+      <div class="skill-pill">Canva · WordPress</div>
+      <div class="skill-pill">Zapier · Loom</div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-label">Career history</div>
+  <h2 class="section-title">Where I've worked</h2>
+  <p class="section-desc">Eight years across recruitment, HR operations, insurance, and client services — all in remote environments supporting US and international clients.</p>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-date">April 2025 – Present</div>
+      <div class="timeline-role">Virtual Executive Assistant (Part-Time)</div>
+      <div class="timeline-company">Touching Hearts at Home · Remote, Fort Collins & Westminster CO</div>
+      <div class="timeline-desc">Conducting monthly employee and client satisfaction reviews across two locations, managing new hire paperwork and HR compliance, drafting and updating SOPs, supporting payroll processing, administering time-off requests, and conducting digital exit interviews for a US home care organization.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">February 2022 – Present</div>
+      <div class="timeline-role">Senior Internal Recruitment Specialist</div>
+      <div class="timeline-company">TalentPop · Remote, Costa Mesa CA</div>
+      <div class="timeline-desc">Managing end-to-end recruitment for remote positions — sourcing via LinkedIn Recruiter and Apollo, conducting competency-based interviews via Zoom, collaborating with HR and BizOps to streamline onboarding, and developing SOPs and training documentation. Tools: HubSpot, Notion, Google Sheets, Slack, and Scribe.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">January 2025 – March 2025</div>
+      <div class="timeline-role">Freelance Lead Generation & Administrative Specialist (Part-Time)</div>
+      <div class="timeline-company">Independent Contractor (Client: Ashley Fydenkevez) · Remote</div>
+      <div class="timeline-desc">Provided freelance administrative and lead generation support for a private client pursuing a real estate business acquisition — researching target brokers, managing email outreach campaigns, maintaining pipeline records, and coordinating communications with full discretion.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">January 2024 – February 2025</div>
+      <div class="timeline-role">Medical Virtual Assistant</div>
+      <div class="timeline-company">Grow Therapy · Remote, New York NY</div>
+      <div class="timeline-desc">Managed confidential healthcare provider records in compliance with HIPAA standards, created and managed HubSpot email templates for claim audits and provider communications, trained junior staff, and compiled data for internal management reports.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">January 2019 – December 2019</div>
+      <div class="timeline-role">HR Specialist / Client Services Officer</div>
+      <div class="timeline-company">VA Platinum · Cebu City</div>
+      <div class="timeline-desc">End-to-end recruitment, HR policy development, SOP creation, and compliance monitoring for a remote-first VA agency.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">July 2015 – December 2018</div>
+      <div class="timeline-role">Client Services Associate / Program Manager</div>
+      <div class="timeline-company">Convergys (Cigna) · Cebu City</div>
+      <div class="timeline-desc">Client relationship management, financial reporting, and Oracle PeopleSoft procurement for a major US health insurance account.</div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio">
+  <div class="section-label">Work samples</div>
+  <h2 class="section-title">What I've created</h2>
+  <p class="section-desc">A selection of writing, design, and operational work from my current and past roles.</p>
+
+  <div class="portfolio-grid">
+    <a href="https://touchinghearts.com/westminster/blog/how-in-home-care-reduces-hospital-readmissions-for-thornton-families/" target="_blank" class="portfolio-card">
+      <div class="card-top blog">📝</div>
+      <div class="card-body">
+        <div class="card-type">Blog · WordPress</div>
+        <div class="card-title">How In-Home Care Reduces Hospital Readmissions for Thornton Families</div>
+        <div class="card-desc">Long-form SEO blog post written for a US home care client. Published on WordPress with structured headers, internal links, and a local audience focus.</div>
+        <div class="card-link">Read article →</div>
+      </div>
+    </a>
+
+    <a href="https://touchinghearts.com/westminster/blog/how-respite-care-in-boulder-helps-families-recharge/" target="_blank" class="portfolio-card">
+      <div class="card-top blog">✍️</div>
+      <div class="card-body">
+        <div class="card-type">Blog · WordPress</div>
+        <div class="card-title">How Respite Care in Boulder Helps Families Recharge</div>
+        <div class="card-desc">Community-facing blog content written to educate and engage families considering home care services in the Boulder, CO area.</div>
+        <div class="card-link">Read article →</div>
+      </div>
+    </a>
+
+    <a href="https://docs.google.com/spreadsheets/d/11iD1SEbn9p9oMbOgHv8X8BXJmsLwIvpechhZrsKJD7k/edit?gid=0#gid=0" target="_blank" class="portfolio-card">
+      <div class="card-top tracking">📊</div>
+      <div class="card-body">
+        <div class="card-type">Content Tracker · Google Sheets</div>
+        <div class="card-title">Blog Publishing & Content Volume Tracker</div>
+        <div class="card-desc">A spreadsheet used to track blog output, publishing schedules, and content volume — demonstrating consistent, organized content management.</div>
+        <div class="card-link">View tracker →</div>
+      </div>
+    </a>
+
+    <a href="https://www.canva.com/design/DAHAkimVZAc/foaeKn_y33vGc73Oli53_Q/edit" target="_blank" class="portfolio-card">
+      <div class="card-top design">🎨</div>
+      <div class="card-body">
+        <div class="card-type">Design · Canva</div>
+        <div class="card-title">Branded Visual Design — Sample 1</div>
+        <div class="card-desc">Canva design created for client communications and branded collateral, following established brand guidelines.</div>
+        <div class="card-link">View design →</div>
+      </div>
+    </a>
+
+    <a href="https://www.canva.com/design/DAG-hQFCRKs/RV7yLKZ3BEqkz3kd_SAytA/edit" target="_blank" class="portfolio-card">
+      <div class="card-top design">🖼️</div>
+      <div class="card-body">
+        <div class="card-type">Design · Canva</div>
+        <div class="card-title">Branded Visual Design — Sample 2</div>
+        <div class="card-desc">Additional Canva design sample demonstrating visual layout, typography, and brand-consistent design for digital use.</div>
+        <div class="card-link">View design →</div>
+      </div>
+    </a>
+
+    <a href="https://www.linkedin.com/in/cristina-gracia-osorio-288009178" target="_blank" class="portfolio-card">
+      <div class="card-top linkedin">💼</div>
+      <div class="card-body">
+        <div class="card-type">Professional Profile · LinkedIn</div>
+        <div class="card-title">LinkedIn Profile</div>
+        <div class="card-desc">Full career history, endorsements, and professional network — 8+ years of recruitment and HR experience across US and international clients.</div>
+        <div class="card-link">View profile →</div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-label">Let's connect</div>
+  <h2 class="section-title" style="color: white;">Open to new opportunities</h2>
+  <p class="section-desc">Currently available for recruitment, talent acquisition, and virtual HR roles supporting Australian and US-based clients.</p>
+
+  <div class="contact-grid">
+    <a href="mailto:cristinagraciaosorio@gmail.com" class="contact-chip">
+      📧 <strong>cristinagraciaosorio@gmail.com</strong>
+    </a>
+    <a href="https://wa.me/639177033557" class="contact-chip">
+      💬 WhatsApp <strong>+63 917 703 3557</strong>
+    </a>
+    <div class="contact-chip">
+      🎮 Discord <strong>edelweiss_2024</strong>
+    </div>
+    <a href="https://www.linkedin.com/in/cristina-gracia-osorio-288009178" target="_blank" class="contact-chip">
+      🔗 <strong>LinkedIn Profile</strong>
+    </a>
+  </div>
+</section>
+
+<footer>
+  © 2026 Cristina Gracia Osorio · Cebu City, Philippines · Built for opportunities with AU & US clients
+</footer>
+
+</body>
+</html>
